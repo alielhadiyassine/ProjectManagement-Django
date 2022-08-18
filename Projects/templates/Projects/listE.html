@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'Projects/style.css' %}">
+    <meta charset="UTF-8">
+    <title>List Employees</title>
+    <style>
+        body {
+            background: white url("{% static 'Projects/images/list.jpg'%}"); /*req*/
+            background-size: 100%;
+        }
+    </style>
+
+</head>
+<body>
+
+            <nav class="n1">
+                <ul>
+                    <li class="l1"><a href="http://localhost:8000">Home</a></li>
+                    <li class="l1"><a href="http://localhost:8000/ListEmployees/">All Employees</a></li>
+                    <li class="l1"><a href="http://localhost:8000/ListUnAssigned/">UnAssigned Employees</a></li>
+                    <li class="l1"><a href="http://localhost:8000/projects">Projects</a></li>
+                    {% if request.user.is_authenticated %}
+                        <li class="l1"><a href="http://localhost:8000/logout">Logout</a></li>
+                    {% else %}
+                        <li class="l1"><a href="http://localhost:8000/login">Sign in</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+
+</body>
+</html>
